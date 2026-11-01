@@ -1,0 +1,31 @@
+# Local builds and dependency copies (never redistribute game/Unity DLLs)
+**/bin/
+**/obj/
+**/dist/
+**/Releases/
+**/releases/
+Research/
+ScannerTests/Fixtures/
+*.dll
+*.exe
+*.pdb
+*.zip
+*.log
+*test-output*.txt
+*run-metadata*.json
+*TEST-REPORT*.md
+
+# Personal/editor/authentication files
+.mork/
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+credentials*

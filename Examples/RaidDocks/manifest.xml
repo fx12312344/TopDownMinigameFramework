@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <ID>example.raiddocks</ID>
+  <Name>夜港仓库 / Night Docks — JSON Content Example</Name>
+  <Author>Framework example</Author>
+  <ModVersion>1.0.1</ModVersion>
+  <Description>独立第三方内容包示例：24×16地图、港务卡宾枪、两种战利品和青蓝皮肤。通过Localization/en.csv由框架ModLoader桥自动注册内容；示例DLL只引用游戏IMod，无框架程序集引用，不读写游戏存档或运行时文件。Third-party JSON content example for RaidPrototype.</Description>
+  <GameVersions><Version>0.46D</Version></GameVersions>
+  <Prerequisites><Mod>local.raidprototype</Mod></Prerequisites>
+  <Assemblies><Assembly>RaidDocksExample.dll</Assembly></Assemblies>
+  <Capabilities />
+</Manifest>

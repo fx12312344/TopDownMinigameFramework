@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../Content.cs" Link="Content.cs" />
+    <Compile Include="../DefaultContent.cs" Link="DefaultContent.cs" />
+    <Compile Include="../RaidModel.cs" Link="RaidModel.cs" />
+    <Compile Include="../Vec2.cs" Link="Vec2.cs" />
+  </ItemGroup>
+</Project>

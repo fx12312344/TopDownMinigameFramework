@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <ID>local.raidprototype</ID>
+  <Name>俯视射击小游戏框架 / Top-down Minigame Framework</Name>
+  <Author>Local</Author>
+  <ModVersion>0.2.4</ModVersion>
+  <Description>为原游戏额外运行俯视角射击小游戏的轻量框架。提供API v1物品、武器、地图、皮肤和PNG扩展；内置最小示例，准备界面可切换第三方地图。仅主菜单运行，无真实背包或存档结算，不依赖枪械模组。A lightweight top-down minigame framework with versioned content registration and sprite skins. Main-menu sandbox only; no real save or inventory integration.</Description>
+  <GameVersions><Version>0.46D</Version></GameVersions>
+  <Prerequisites />
+  <Assemblies><Assembly>RaidPrototype.dll</Assembly></Assemblies>
+  <Capabilities />
+</Manifest>

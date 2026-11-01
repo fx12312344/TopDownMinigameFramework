@@ -1,0 +1,13 @@
+<Project>
+  <!-- Explicit -p:GameManaged wins; environment MSBuild properties are also supported. -->
+  <PropertyGroup>
+    <GameManaged Condition="'$(GameManaged)' == '' and '$(PROBABLY_STOLEN_MANAGED)' != ''">$(PROBABLY_STOLEN_MANAGED)</GameManaged>
+    <GameRoot Condition="'$(GameRoot)' == '' and '$(PROBABLY_STOLEN_ROOT)' != ''">$(PROBABLY_STOLEN_ROOT)</GameRoot>
+    <GameManaged Condition="'$(GameManaged)' == '' and '$(GameRoot)' != ''">$(GameRoot)/Probably Stolen_Data/Managed</GameManaged>
+  </PropertyGroup>
+  <Target Name="ValidateLocalGameReferences" BeforeTargets="ResolveAssemblyReferences">
+    <Error Condition="'$(GameManaged)' == ''" Text="Local game references are not configured. Set -p:GameManaged=&quot;path/to/Managed&quot;, PROBABLY_STOLEN_MANAGED, or PROBABLY_STOLEN_ROOT (existing local game root). Game DLLs are not included or downloaded. Tests/Tests.csproj needs no game files." />
+    <Error Condition="'$(GameManaged)' != '' and !Exists('$(GameManaged)')" Text="GameManaged directory does not exist: $(GameManaged). Use an existing local installation/reference directory." />
+    <Error Condition="'%(Reference.HintPath)' != '' and !Exists('%(Reference.HintPath)')" Text="Required local reference is missing: %(Reference.HintPath). Check GameManaged / PROBABLY_STOLEN_MANAGED / PROBABLY_STOLEN_ROOT; no game DLLs are bundled or downloaded." />
+  </Target>
+</Project>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../GameReferences.props" />
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><EnableDefaultCompileItems>false</EnableDefaultCompileItems><LangVersion>latest</LangVersion></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../Vec2.cs" Link="Framework/Vec2.cs" />
+    <Compile Include="../../RaidModel.cs" Link="Framework/RaidModel.cs" />
+    <Compile Include="../../Content.cs" Link="Framework/Content.cs" />
+    <Compile Include="../../DefaultContent.cs" Link="Framework/DefaultContent.cs" />
+    <Compile Include="../../ContentLoader.cs" Link="Framework/ContentLoader.cs" />
+    <Reference Include="Newtonsoft.Json"><HintPath>$(GameManaged)\Newtonsoft.Json.dll</HintPath><Private>true</Private></Reference>
+    <Compile Include="Program.cs" />
+    <None Include="../RaidDocks/pack.json" Link="pack.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="$(BaseIntermediateOutputPath)generated-content.csv" Link="generated-content.csv" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+  <Target Name="GenerateContentCsvFixture" BeforeTargets="BeforeBuild">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)/../RaidDocks/generate-content-localization.ps1&quot; -OutputPath &quot;$(BaseIntermediateOutputPath)generated-content.csv&quot;" />
+  </Target>
+</Project>

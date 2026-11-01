@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <!-- Projects share a source folder, never their generated assembly info/apphost. -->
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+    <BaseOutputPath>$(MSBuildThisFileDirectory)bin\$(MSBuildProjectName)\</BaseOutputPath>
+  </PropertyGroup>
+</Project>
